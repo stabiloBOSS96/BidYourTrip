@@ -2,7 +2,7 @@
 
 Number 1 platform to bet for your last minute trip
 
-##Run App
+## Run App
 1. install node.js
 2. run `npm install -g @angular/cli`
 
@@ -12,7 +12,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Generate a folder for each component. Therefore generate folder, switch to folder by `cd folder-name` then run `ng g component component-name`
+
+You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
