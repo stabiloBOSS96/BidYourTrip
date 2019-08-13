@@ -12,7 +12,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Generate a folder for each component. Therefore generate folder, switch to folder by `cd folder-name` then run `ng g component component-name`
+Run `ng g component component-name`
 
 You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
