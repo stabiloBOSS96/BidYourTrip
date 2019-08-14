@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { FooterNavComponent } from './footer-nav/footer-nav.component';
+import { ChooseCategoryComponent } from './choose-category/choose-category.component';
+import { SearchFlightComponent } from './search-flight/search-flight.component';
+import { AllProductsComponent } from './all-products/all-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
-    FooterNavComponent
+    FooterNavComponent,
+    ChooseCategoryComponent,
+    SearchFlightComponent,
+    AllProductsComponent
   ],
   imports: [
     BrowserModule,

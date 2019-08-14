@@ -2,6 +2,11 @@
 
 Number 1 platform to bet for your last minute trip
 
+## View online
+
+http://betyourtrip.bplaced.net/
+
+
 ## Run App
 1. install node.js
 2. run `npm install -g @angular/cli`
