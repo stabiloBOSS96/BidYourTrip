@@ -1,6 +1,8 @@
+import { Seat } from './Seat';
+
 export interface Flight {
     Id: number;
     From: string;
     To: String;
-    Empty: number
+    Seats:Seat[]
 }

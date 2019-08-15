@@ -26,12 +26,25 @@
                                 <i class="fas fa-plane fa-2x"></i>
                                 <div class="ml-3 d-inline-block align-middle ml-3">
                                     <h5 class="mb-0"> <a href="#"
-                                            class="text-dark d-inline-block align-middle">{{flight.From}}-{{flight.To}}</a></h5><span
-                                        class="text-muted font-weight-normal font-italic d-block">
-                                        <span class="badge badge-info m-1">E</span>
-                                        <span class="badge badge-info m-1">P</span>
-                                        <span class="badge badge-info m-1">B</span>
-                                        <span class="badge badge-info m-1">F</span>
+                                            class="text-dark d-inline-block align-middle">{{flight.From}}-{{flight.To}}</a>
+                                    </h5><span class="text-muted font-weight-normal font-italic d-block">
+                                        <span class="badge badge-info m-1"
+                                            *ngIf="categoryAvailable(flight.Id, 'E')">E</span>
+                                        <span class="badge badge-light m-1"
+                                            *ngIf="!categoryAvailable(flight.Id, 'E')">E</span>
+                                        <span class="badge badge-info m-1"
+                                            *ngIf="categoryAvailable(flight.Id, 'P')">P</span>
+                                        <span class="badge badge-light m-1"
+                                            *ngIf="!categoryAvailable(flight.Id, 'P')">P</span>
+                                        <span class="badge badge-info m-1"
+                                            *ngIf="categoryAvailable(flight.Id, 'B')">B</span>
+                                        <span class="badge badge-light m-1"
+                                            *ngIf="!categoryAvailable(flight.Id, 'B')">B</span>
+                                        <span class="badge badge-info m-1"
+                                            *ngIf="categoryAvailable(flight.Id, 'F')">F</span>
+                                        <span class="badge badge-light m-1"
+                                            *ngIf="!categoryAvailable(flight.Id, 'F')">F</span>
+
                                     </span>
                                 </div>
                             </div>
@@ -39,15 +52,16 @@
                         <td class="border-0 align-middle">
                             <div class="row text-center">
                                 <div class="col col-12 text-danger font-weight-bold">
-                                    <strong>€39.00</strong>
+                                    <strong>{{findCheapestSeat(flight.Id)}} €</strong>
                                 </div>
                                 <div class="col col-12">
-                                    <small><del>€79.00</del></small>
+                                    <small><del>{{findAverageOfCheapestSeat(flight.Id)}} €</del></small>
                                 </div>
                             </div>
                         </td>
-                        <td class="border-0 align-middle"><strong>{{flight.Empty}}</strong></td>
-                        <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fas fa-caret-down fa-2x"></i></a>
+                        <td class="border-0 align-middle"><strong>{{countSeats(flight.Id)}}</strong></td>
+                        <td class="border-0 align-middle"><a href="#" class="text-dark"><i
+                                    class="fas fa-caret-down fa-2x"></i></a>
                         </td>
                     </tr>
                 </tbody>
