@@ -4,5 +4,8 @@ export interface Flight {
     Id: number;
     From: string;
     To: String;
-    Seats:Seat[]
+    ExpirationTime: Date;
+    Departure: Date;
+    Arrival: Date;
+    Seats: Seat[];
 }

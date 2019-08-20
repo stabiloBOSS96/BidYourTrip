@@ -1,72 +1,96 @@
+<div class="container">
+        <search-flight class="m-2"></search-flight>
+    </div>
 <div class="row">
     <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" class="border-0 bg-light">
                             <div class="p-2 px-3 text-uppercase">Angebot</div>
                         </th>
                         <th scope="col" class="border-0 bg-light text-center">
+                            <div class="py-2 text-uppercase">Details</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light text-center">
                             <div class="py-2 text-uppercase">Preis</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light text-center">
+                                <div class="py-2 text-uppercase">Restzeit</div>
                         </th>
                         <th scope="col" class="border-0 bg-light">
                             <div class="py-2 text-uppercase">Frei</div>
                         </th>
-                        <th scope="col" class="border-0 bg-light">
-                            <div class="py-2 text-uppercase"></div>
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let flight of flights">
+                    <tr *ngFor="let flight of flights" (click)="navigateToFlightDetail(flight.Id)" class="pointer">
                         <th scope="row" class="border-0">
                             <div class="p-2">
                                 <i class="fas fa-plane fa-2x"></i>
                                 <div class="ml-3 d-inline-block align-middle ml-3">
-                                    <h5 class="mb-0"> <a href="#"
-                                            class="text-dark d-inline-block align-middle">{{flight.From}}-{{flight.To}}</a>
-                                    </h5><span class="text-muted font-weight-normal font-italic d-block">
-                                        <span class="badge badge-info m-1"
-                                            *ngIf="categoryAvailable(flight.Id, 'E')">E</span>
-                                        <span class="badge badge-light m-1"
-                                            *ngIf="!categoryAvailable(flight.Id, 'E')">E</span>
-                                        <span class="badge badge-info m-1"
-                                            *ngIf="categoryAvailable(flight.Id, 'P')">P</span>
-                                        <span class="badge badge-light m-1"
-                                            *ngIf="!categoryAvailable(flight.Id, 'P')">P</span>
-                                        <span class="badge badge-info m-1"
-                                            *ngIf="categoryAvailable(flight.Id, 'B')">B</span>
-                                        <span class="badge badge-light m-1"
-                                            *ngIf="!categoryAvailable(flight.Id, 'B')">B</span>
-                                        <span class="badge badge-info m-1"
-                                            *ngIf="categoryAvailable(flight.Id, 'F')">F</span>
-                                        <span class="badge badge-light m-1"
-                                            *ngIf="!categoryAvailable(flight.Id, 'F')">F</span>
-
+                                    <h5 class="mb-0">
+                                        <span
+                                            class="text-dark d-inline-block align-middle">{{flight.From}}-{{flight.To}}</span>
+                                    </h5>
+                                    <span class="text-muted font-weight-normal font-italic d-block">
+                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'E')"
+                                            ngbTooltip="Economy Class">E</span>
+                                        <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'E')"
+                                            ngbTooltip="Economy Class">E</span>
+                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'P')"
+                                            ngbTooltip="Premium Economy Class" [openDelay]="10"
+                                            [closeDelay]="10">P</span>
+                                        <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'P')"
+                                            ngbTooltip="Premium Economy Class" [openDelay]="10"
+                                            [closeDelay]="10">P</span>
+                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'B')"
+                                            ngbTooltip="Business Class">B</span>
+                                        <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'B')"
+                                            ngbTooltip="Business Class">B</span>
+                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'F')"
+                                            ngbTooltip="First Class">F</span>
+                                        <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'F')"
+                                            ngbTooltip="First Class">F</span>
                                     </span>
                                 </div>
                             </div>
                         </th>
                         <td class="border-0 align-middle">
                             <div class="row text-center">
-                                <div class="col col-12 text-danger font-weight-bold">
-                                    <strong>{{findCheapestSeat(flight.Id)}} €</strong>
+                                <div class="col col-12 text-dark font-weight-bold">
+                                    {{ flight.Departure | date:'dd.MM.yyyy'}}
+
                                 </div>
-                                <div class="col col-12">
+                                <div class="col col-12 text-dark font-weight-bold">
+                                    {{ flight.Departure | date:'HH:mm'}} bis
+                                    {{ flight.Arrival | date:'HH:mm'}}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="border-0 align-middle">
+                            <div class="row text-center">
+                                <div class="col col-12 text-danger font-weight-bold" ngbTooltip="Aktueller Preis">
+                                    <strong><strong>{{findCheapestSeat(flight.Id)}} €</strong></strong>
+                                </div>
+                                <div class="col col-12" ngbTooltip="Standardpreis">
                                     <small><del>{{findAverageOfCheapestSeat(flight.Id)}} €</del></small>
                                 </div>
                             </div>
                         </td>
-                        <td class="border-0 align-middle"><strong>{{countSeats(flight.Id)}}</strong></td>
-                        <td class="border-0 align-middle"><a href="#" class="text-dark"><i
-                                    class="fas fa-caret-down fa-2x"></i></a>
+                        <td class="border-0 align-middle">
+                            <div class="row text-center">
+                                <div class="col col-12 text-dark font-weight-bold">Noch
+                                    <countdown-timer [end]="flight.ExpirationTime"></countdown-timer> verfügbar!
+                                </div>
+                            </div>
                         </td>
+                        <td class="border-0 align-middle"><strong>{{countSeats(flight.Id)}}</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <!-- End -->
     </div>
 </div>

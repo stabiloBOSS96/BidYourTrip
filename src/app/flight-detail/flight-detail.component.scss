@@ -16,7 +16,7 @@
     padding: 10px 45px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     background: #6225E6;
     transition: 1s;
@@ -26,10 +26,10 @@
 
 .cta-yellow {
     display: flex;
-    padding: 10px 45px;
+    padding: 10px 25px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     background: #FBC638;
     transition: 1s;
@@ -41,15 +41,8 @@
    outline: none; 
 }
 
-.cta:hover {
-    transition: 0.5s;
-    box-shadow: 10px 10px 0 #FBC638;
-}
 
-.cta-yellow:hover {
-    transition: 0.5s;
-    box-shadow: 10px 10px 0 #6225E6;
-}
+
 
 .cta span:nth-child(2) {
     transition: 0.5s;
@@ -60,14 +53,8 @@
     margin-right: 0px;
 }
 
-.cta:hover  span:nth-child(2) {
-    transition: 0.5s;
-    margin-right: 45px;
-}
-.cta-yellow:hover  span:nth-child(2) {
-    transition: 0.5s;
-    margin-right: 45px;
-}
+
+
 
   span {
     transform: skewX(15deg) 
