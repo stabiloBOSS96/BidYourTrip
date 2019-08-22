@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'choose-category',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseCategoryComponent implements OnInit {
 
-  constructor() { }
+  private readonly notifier: NotifierService;
 
-  ngOnInit() {
+  constructor(
+    notifierService: NotifierService
+  ) { 
+    this.notifier = notifierService;
   }
 
+  ngOnInit() {
+
+  }
+
+  notifyWarning(message){
+    this.notifier.notify( 'warning', message );
+  }
 }
