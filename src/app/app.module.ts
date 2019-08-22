@@ -11,6 +11,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { FlightDetailComponent } from './flight-detail/flight-detail.component';
 import { CountdownTimerModule } from "ngx-countdown-timer";
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ChooseCategoryComponent,
     SearchFlightComponent,
     AllProductsComponent,
-    FlightDetailComponent
+    FlightDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

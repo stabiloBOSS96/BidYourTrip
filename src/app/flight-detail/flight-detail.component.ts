@@ -71,9 +71,17 @@ export class FlightDetailComponent implements OnInit {
 
     if (this.bidPrice > seat.ActualPrice) {
       seat.ActualPrice = this.bidPrice;
-    }else{
+    } else {
       console.log("Bid to low");
     }
 
+  }
+
+  isLoggedIn() {
+    let loggedIn: boolean = false;
+    if (localStorage.getItem("currentUser") == null) {
+      loggedIn = true;
+    }
+    return loggedIn;
   }
 }
