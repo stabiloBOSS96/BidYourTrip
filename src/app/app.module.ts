@@ -12,6 +12,7 @@ import { FlightDetailComponent } from './flight-detail/flight-detail.component';
 import { CountdownTimerModule } from "ngx-countdown-timer";
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { NotifierModule } from "angular-notifier";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     NgbModule,
     CountdownTimerModule,
-    FormsModule
+    FormsModule, 
+    NotifierModule.withConfig({
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

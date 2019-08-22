@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/models/User';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'header-nav',
@@ -8,7 +9,13 @@ import { User } from '../shared/models/User';
 })
 export class HeaderNavComponent implements OnInit {
 
-  constructor() { }
+  private readonly notifier: NotifierService;
+
+  constructor(
+    notifierService: NotifierService
+  ) { 
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {
   }
@@ -23,6 +30,11 @@ export class HeaderNavComponent implements OnInit {
   }
 
   logout(){
+    console.log(localStorage.getItem("currentUser"));
+    
+    let user: User = JSON.parse(localStorage.getItem("currentUser"));
+    let message = "Komm bald wieder "+ user.Name+ "!"; 
+    this.notifier.notify( 'success', message );
     localStorage.clear()
   }
 
