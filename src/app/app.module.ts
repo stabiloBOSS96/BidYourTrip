@@ -13,6 +13,8 @@ import { CountdownTimerModule } from "ngx-countdown-timer";
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { NotifierModule } from "angular-notifier";
+import { RegisterComponent } from './register/register.component';
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NotifierModule } from "angular-notifier";
     SearchFlightComponent,
     AllProductsComponent,
     FlightDetailComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,9 @@ import { NotifierModule } from "angular-notifier";
     CountdownTimerModule,
     FormsModule, 
     NotifierModule.withConfig({
+    }),
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyAYJKB8Y7KNzbv6NN7ERl8nHfTJ1UtS4RI'
     })
   ],
   providers: [],
