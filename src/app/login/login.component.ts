@@ -103,6 +103,8 @@ export class LoginComponent implements OnInit {
     this.users.forEach(user => {
       if (user.Email.toLowerCase().localeCompare(this.user.toLowerCase()) == 0) {
         localStorage.setItem("currentUser", JSON.stringify(user));
+        let message = "Willkommen zurück "+ user.Name+"!"; 
+        this.notifier.notify( 'success', message );
         this.router.navigate(['/product-overview']);
         found = true
       }

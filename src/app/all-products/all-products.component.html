@@ -36,7 +36,7 @@
                                             class="text-dark d-inline-block align-middle">{{flight.From}}-{{flight.To}}</span>
                                     </h5>
                                     <span class="text-muted font-weight-normal font-italic d-block">
-                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'E')"
+                                        <span class="badge badge-success m-1" *ngIf="categoryAvailable(flight.Id, 'E')"
                                             ngbTooltip="Economy Class">E</span>
                                         <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'E')"
                                             ngbTooltip="Economy Class">E</span>
@@ -46,11 +46,11 @@
                                         <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'P')"
                                             ngbTooltip="Premium Economy Class" [openDelay]="10"
                                             [closeDelay]="10">P</span>
-                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'B')"
+                                        <span class="badge badge-primary m-1" *ngIf="categoryAvailable(flight.Id, 'B')"
                                             ngbTooltip="Business Class">B</span>
                                         <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'B')"
                                             ngbTooltip="Business Class">B</span>
-                                        <span class="badge badge-warning m-1" *ngIf="categoryAvailable(flight.Id, 'F')"
+                                        <span class="badge badge-danger m-1" *ngIf="categoryAvailable(flight.Id, 'F')"
                                             ngbTooltip="First Class">F</span>
                                         <span class="badge badge-light m-1" *ngIf="!categoryAvailable(flight.Id, 'F')"
                                             ngbTooltip="First Class">F</span>
