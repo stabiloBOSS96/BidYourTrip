@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { NotifierModule } from "angular-notifier";
 import { RegisterComponent } from './register/register.component';
 import { AgmCoreModule } from "@agm/core";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AgmCoreModule } from "@agm/core";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     CountdownTimerModule,

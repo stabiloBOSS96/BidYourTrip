@@ -11,8 +11,7 @@ export class RegisterComponent implements OnInit {
   email: string = ""
   name: string = ""
   surname: string = ""
-  pass1: string = ""
-  pass2: string = ""
+  pass: string = ""
   
   private readonly notifier: NotifierService;
 
