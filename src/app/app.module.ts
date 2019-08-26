@@ -16,6 +16,7 @@ import { NotifierModule } from "angular-notifier";
 import { RegisterComponent } from './register/register.component';
 import { AgmCoreModule } from "@agm/core";
 import { HttpClientModule } from "@angular/common/http";
+import { UserOverviewComponent } from './user-overview/user-overview.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from "@angular/common/http";
     AllProductsComponent,
     FlightDetailComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserOverviewComponent
   ],
   imports: [
     BrowserModule,

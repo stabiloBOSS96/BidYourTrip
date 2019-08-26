@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/models';
+import { User, UserMap } from '../shared/models';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { AuthService } from '../shared/services';
@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   pass: string = ""
 
   users: User[];
+  response: UserMap;
 
   private readonly notifier: NotifierService;
 
@@ -28,15 +29,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.getUserData();
-    
   }
 
   login() {
+
     let found: boolean = false;
     this.users.forEach(user => {
-      if (user.Email.toLowerCase().localeCompare(this.user.toLowerCase()) == 0) {
+      if (user.email.toLowerCase().localeCompare(this.user.toLowerCase()) == 0 && user.password === this.pass) {
         localStorage.setItem("currentUser", JSON.stringify(user));
-        let message = "Willkommen zurück " + user.Name + "!";
+        let message = "Willkommen zurück " + user.name + "!";
         this.notifier.notify('success', message);
         this.router.navigate(['/product-overview']);
         found = true
@@ -49,9 +50,9 @@ export class LoginComponent implements OnInit {
 
 
   getUserData() {
-    this.authService.getAllUsers().subscribe((data: User[]) => {
-      this.users = data;
-      console.log(this.users);
+    this.authService.getAllUsers().subscribe(res => {
+      this.users = res.records
     })
   }
+
 }
