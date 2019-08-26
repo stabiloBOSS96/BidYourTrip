@@ -28,8 +28,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
-  }
-  ,
+  },
   {
     path: 'user-overview',
     component: UserOverviewComponent
