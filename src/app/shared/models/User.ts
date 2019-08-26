@@ -1,7 +1,11 @@
 export interface User {
-    Id: number;
-    Name: String;
-    Surname: String;
-    Email: String;
-    Password: String;
+    id: number;
+    name: String;
+    surname: String;
+    email: String;
+    password: String;
+}
+
+export interface UserMap {
+    records: User[];
 }

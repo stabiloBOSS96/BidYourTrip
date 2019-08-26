@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="mt-3 mb-1 cta text-center fadeIn first">Register</div>
+            <input type="text" class="fadeIn second" placeholder="Email" [(ngModel)]="email">
+            <input type="text" class="fadeIn second" placeholder="Vorname" [(ngModel)]="name">
+            <input type="text" class="fadeIn second" placeholder="Nachname" [(ngModel)]="surname">
+            <input type="password" class="fadeIn third" placeholder="Passwort" [(ngModel)]="pass">
+            <input type="submit" class="fadeIn fourth m-1 mb-1" value="Register" (click)="register()">
+            <div id="formFooter" class="mt-2">
+                <a class="underlineHover" [routerLink]="['/login']">Login</a>
+            </div>
+
+        </div>
+    </div>
+</div>

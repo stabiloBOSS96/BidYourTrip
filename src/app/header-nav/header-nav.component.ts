@@ -33,7 +33,7 @@ export class HeaderNavComponent implements OnInit {
     console.log(localStorage.getItem("currentUser"));
     
     let user: User = JSON.parse(localStorage.getItem("currentUser"));
-    let message = "Komm bald wieder "+ user.Name+ "!"; 
+    let message = "Komm bald wieder "+ user.name+ "!"; 
     this.notifier.notify( 'success', message );
     localStorage.clear()
   }

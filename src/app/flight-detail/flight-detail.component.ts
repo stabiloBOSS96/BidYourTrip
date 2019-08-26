@@ -9,6 +9,8 @@ import { NotifierService } from 'angular-notifier';
   styleUrls: ['./flight-detail.component.scss']
 })
 export class FlightDetailComponent implements OnInit {
+  lat = 51.678418;
+  lng = 7.809007;
 
   flight: Flight = null;
   bidPrice: number = 0;
