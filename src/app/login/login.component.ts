@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
     let found: boolean = false;
     this.users.forEach(user => {
       if (user.email.toLowerCase().localeCompare(this.user.toLowerCase()) == 0 && user.password === this.pass) {

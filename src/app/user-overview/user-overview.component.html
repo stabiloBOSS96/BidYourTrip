@@ -33,7 +33,7 @@
                 <tbody>
                     <tr *ngFor="let user of users" class="pointer">
                         <th scope="row" class="border-0">
-                            <i class="fas fa-user"></i>&nbsp;&nbsp;&nbsp;{{user.id}}
+                            <i class="fas fa-user" (click)="deleteUser(user)"></i>&nbsp;&nbsp;&nbsp;{{user.id}}
                         </th>
                         <td class="border-0 align-middle">
                             {{user.name}} {{user.surname}}

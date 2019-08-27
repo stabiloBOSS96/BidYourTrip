@@ -13,12 +13,16 @@ export class UserOverviewComponent implements OnInit {
 
   users: User[]=[];
 
+  private readonly notifier: NotifierService;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     notifierService: NotifierService,
     private authService: AuthService
-  ) { }
+  ) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {
     this.getUserData()
@@ -32,6 +36,14 @@ export class UserOverviewComponent implements OnInit {
 
   countUsers(){
     return this.users.length;
+  }
+
+  deleteUser(user: User) {
+    this.authService.deleteUser(user).subscribe(data=>
+      this.router.navigate(['/user-overview']),
+      error => this.notifier.notify('error', "Bitte probiere es später erneut!")
+    );
+
   }
 
 }

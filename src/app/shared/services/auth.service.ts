@@ -24,7 +24,15 @@ export class AuthService {
   }
 
   postUser(user: User) {
-    console.log("send");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post(this.apiBaseUrl + this.apiPostUserUrl, JSON.stringify(user), httpOptions);
+  }
+
+  deleteUser(user: User) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
