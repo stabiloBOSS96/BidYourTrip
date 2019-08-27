@@ -73,10 +73,10 @@
                         <td class="border-0 align-middle">
                             <div class="row text-center">
                                 <div class="col col-12 text-danger font-weight-bold" ngbTooltip="Aktueller Preis">
-                                    <strong><strong>{{findCheapestSeat(flight.Id)}} €</strong></strong>
+                                   <h5><strong>{{findCheapestSeat(flight.Id)}} €</strong></h5>
                                 </div>
                                 <div class="col col-12" ngbTooltip="Standardpreis">
-                                    <small><del>{{findAverageOfCheapestSeat(flight.Id)}} €</del></small>
+                                    <del>{{findAverageOfCheapestSeat(flight.Id)}} €</del>
                                 </div>
                             </div>
                         </td>
