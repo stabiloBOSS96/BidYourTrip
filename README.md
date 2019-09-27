@@ -8,20 +8,7 @@ http://betyourtrip.bplaced.net/
 
 ## Login
 
-To get access to the bidding platform, you have to use one of our mock-logins:
-
-| Email                    | Password |
-|--------------------------|----------|
-| Lucky.Luke@web.de        | asdf     |
-| Dagobert.Duck@web.de     | asdf     |
-| Angela.Merkel@web.de     | asdf     |
-| Donald.Duck@web.de       | asdf     |
-| Mickey.Mouse@web.de      | asdf     |
-| Max.Mustermann@web.de    | asdf     |
-| Erika.Musterfrau@web.de  | asdf     |
-| Thomas.Gottschalk@web.de | asdf     |
-| Günther.Jauch@web.de     | asdf     |
-| Steffen.Vietz@web.de     | asdf     |
+To get access to the bidding platform, you have to create your own user via the signup page.
 
 ## Run App
 1. install node.js
