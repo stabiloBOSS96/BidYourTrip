@@ -1,6 +1,7 @@
 # BidYourTrip
 
-Number 1 platform to bet for your last minute trip
+Number 1 platform to bet for your last minute trip.
+This is a project of students of the Baden-Wuerttemberg Cooperative State University within the lecture "New Concepts". The aim is the foundation of a start-up.
 
 ## View online
 
